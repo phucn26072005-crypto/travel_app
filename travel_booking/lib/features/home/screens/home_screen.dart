@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../services/place_service.dart';
-import '../widgets/place_card.dart';
-import '../widgets/loading_widget.dart';
-import '../models/place.dart';
-import 'login_screen.dart';
-import 'profile_screen.dart';
-import 'place_detail_screen.dart';
-import 'hotel_list_booking.dart';
+import 'package:travel_booking/services/place_service.dart';
+import 'package:travel_booking/widgets/place_card.dart';
+import 'package:travel_booking/widgets/loading_widget.dart';
+import 'package:travel_booking/models/place.dart';
+import 'package:travel_booking/features/auth/screens/login_screen.dart';
+import 'package:travel_booking/features/profile/screens/profile_screen.dart';
+import 'package:travel_booking/features/places/screens/place_detail_screen.dart';
+import 'package:travel_booking/features/booking/screens/hotel_list_booking.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

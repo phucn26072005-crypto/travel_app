@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/place.dart';
-import '../screens/place_detail_screen.dart';
+import 'package:travel_booking/models/place.dart';
+import 'package:travel_booking/features/places/screens/place_detail_screen.dart';
 
 class PlaceCard extends StatelessWidget {
   final Place place;

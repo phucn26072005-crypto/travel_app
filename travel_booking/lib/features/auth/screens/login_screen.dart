@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_booking/Data/du_lieu_nguoi_dung.dart';
-import 'home_screen.dart';
-import 'Admin_screen.dart';
+import 'package:travel_booking/features/home/screens/home_screen.dart';
+import 'package:travel_booking/features/admin/ad_shell.dart';
 class ManHinhDangNhap extends StatefulWidget {
   const ManHinhDangNhap({super.key});
 
@@ -29,7 +29,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
     if (email == "admin" && pass == "123") {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const AdminScreen()),
+        MaterialPageRoute(builder: (_) => const AdShell()),
       );
       return;
     }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:travel_booking/features/home/screens/home_screen.dart';
+import 'package:travel_booking/features/admin/ad_shell.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const HomeScreen(),
+      routes: {
+        '/admin': (context) => const AdShell(),
+      },
     );
   }
 }

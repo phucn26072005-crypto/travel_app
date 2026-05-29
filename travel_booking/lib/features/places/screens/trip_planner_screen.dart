@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/place.dart';
-import 'booking_screen.dart';
+import 'package:travel_booking/models/place.dart';
+import 'package:travel_booking/features/booking/screens/booking_screen.dart';
 
 class TripPlannerScreen extends StatefulWidget {
   final List<Place> places;

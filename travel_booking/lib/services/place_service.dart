@@ -1,4 +1,4 @@
-import '../models/place.dart';
+import 'package:travel_booking/models/place.dart';
 
 class PlaceService {
   Future<List<Place>> getPlaces() async {

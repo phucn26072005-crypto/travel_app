@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/place.dart';
-import 'payment_screen.dart';
+import 'package:travel_booking/models/place.dart';
+import 'package:travel_booking/features/payment/screens/payment_screen.dart';
 
 class BookingScreen extends StatefulWidget {
   final Place place;
@@ -135,7 +135,15 @@ class _BookingScreenState extends State<BookingScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => PaymentScreen(total: total),
+                      builder: (_) => PaymentScreen(
+                        total: total,
+                        bookingDetails: {
+                          'place': widget.place.name,
+                          'guests': people,
+                          'checkin': 'Hôm nay', 
+                          'checkout': 'Ngày mai',
+                        },
+                      ),
                     ),
                   );
                 },

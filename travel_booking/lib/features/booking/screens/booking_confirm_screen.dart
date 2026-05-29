@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'payment_screen.dart';
+import 'package:travel_booking/features/payment/screens/payment_screen.dart';
 
 class BookingConfirmationScreen extends StatelessWidget {
   const BookingConfirmationScreen({super.key});
@@ -41,7 +41,15 @@ class BookingConfirmationScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const PaymentScreen(total: 1200000),
+                      builder: (context) => const PaymentScreen(
+                        total: 1200000,
+                        bookingDetails: {
+                          'place': 'The BackPacker Hotel',
+                          'guests': 2,
+                          'checkin': '15/04/2026',
+                          'checkout': '17/04/2026',
+                        },
+                      ),
                     ),
                   );
                 },

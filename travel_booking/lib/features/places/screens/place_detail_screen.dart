@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_booking/screens/booking_screen.dart';
-import '../models/place.dart';
-import 'booking_screen.dart';
-import 'hotel_list_booking.dart';
+import 'package:travel_booking/models/place.dart';
+import 'package:travel_booking/features/booking/screens/hotel_list_booking.dart';
 class PlaceDetailScreen extends StatelessWidget {
   final Place place;
 

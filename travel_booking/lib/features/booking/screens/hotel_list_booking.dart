@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/place.dart';
-import 'hotel_detail_screen.dart';
+import 'package:travel_booking/models/place.dart';
+import 'package:travel_booking/features/hotel/screens/hotel_detail_screen.dart';
 
 class HotelListBooking extends StatelessWidget {
   const HotelListBooking({super.key});

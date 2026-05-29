@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'package:travel_booking/features/home/screens/home_screen.dart';
+import 'package:travel_booking/services/api_service.dart';
 
 class PaymentScreen extends StatefulWidget {
   final int total;
+  final Map<String, dynamic>? bookingDetails;
 
-  const PaymentScreen({super.key, required this.total});
+  const PaymentScreen({super.key, required this.total, this.bookingDetails});
 
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
@@ -49,7 +51,24 @@ class _PaymentScreenState extends State<PaymentScreen> {
     }
 
     setState(() => loading = true);
+    // Giả lập thời gian xử lý thanh toán
     await Future.delayed(const Duration(seconds: 2));
+
+    // Gọi API lưu đơn đặt phòng
+    if (widget.bookingDetails != null) {
+      Map<String, dynamic> data = Map.from(widget.bookingDetails!);
+      data['total'] = widget.total;
+      data['status'] = 'pending';
+      data['name'] = email.text.split('@').first; // Lấy tạm tên từ email nếu chưa có
+      
+      bool success = await ApiService.createBooking(data);
+      if (!success && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Có lỗi khi lưu đơn, vui lòng thử lại!")),
+        );
+      }
+    }
+
     setState(() => loading = false);
 
     if (!mounted) return;
@@ -61,7 +80,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       builder: (context) => AlertDialog(
         title: const Text("Thành công"),
         content: Text(
-          "Thanh toán bằng $method thành công!\nHóa đơn đã gửi về ${email.text}",
+          "Thanh toán bằng $method thành công!\nHóa đơn đã gửi về ${email.text}\nĐơn đặt phòng đang chờ Admin xác nhận.",
         ),
         actions: [
           TextButton(

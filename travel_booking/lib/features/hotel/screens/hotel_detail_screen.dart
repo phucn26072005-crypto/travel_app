@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_booking/screens/booking_confirm_screen.dart';
-import '../models/place.dart';
-import 'booking_confirm_screen.dart';
+import 'package:travel_booking/features/booking/screens/booking_confirm_screen.dart';
+import 'package:travel_booking/models/place.dart';
 
 class HotelDetailScreen extends StatelessWidget {
   final Place place;
